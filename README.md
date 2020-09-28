@@ -172,7 +172,7 @@ ORG=<YOUR_ORG> BUNDLE_VERSIONS="2.5.0" make install/olm/bundle
 ```
 
 #### Deploy an upgrade version
-Example shows upgrade from 2.5.0 to 2.4.0. 2.4.0 must already be installed on the cluster.
+Example shows upgrade from 2.4.0 to 2.5.0. 2.4.0 must already be installed on the cluster.
 2.5.0 must reference 2.4.0 in the CSV replaces field 
 ```sh
 ORG=<YOUR_ORG> BUNDLE_VERSIONS="2.5.0,2.4.0" UPGRADE=true make install/olm/bundle 
