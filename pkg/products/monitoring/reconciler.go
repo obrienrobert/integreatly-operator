@@ -586,8 +586,13 @@ func (r *Reconciler) reconcileComponents(ctx context.Context, serverClient k8scl
 				"prometheus":   "application-monitoring",
 				"alertmanager": "application-monitoring",
 			})
+
+			// Editing this value required also updating the number of expected
+			// replicas within the MiddlewareMonitoringPodCount alert
+			m.Spec.Replicas = 3
 		} else {
 			m.Spec.Affinity = nil
+			m.Spec.Replicas = 1
 		}
 
 		r.monitoring = m
